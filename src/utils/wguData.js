@@ -2,24 +2,34 @@
 // Each course has: id, code, name, creditUnits, type, difficulty, avgDays, tags
 
 export const DEGREE_PROGRAMS = {
-  BSCS: {
-    id: 'BSCS',
-    name: 'B.S. Computer Science',
-    totalCUs: 124,
-    categories: ['General Education', 'Core IT', 'CS Core', 'Math', 'Electives'],
-  },
-  BSIT: {
-    id: 'BSIT',
-    name: 'B.S. Information Technology',
-    totalCUs: 120,
-    categories: ['General Education', 'Core IT', 'IT Core', 'Electives'],
-  },
-  BSBA: {
-    id: 'BSBA',
-    name: 'B.S. Business Administration',
-    totalCUs: 120,
-    categories: ['General Education', 'Business Core', 'Electives'],
-  },
+  // ── IT Bachelor's ──────────────────────────────
+  BSCS:   { id: 'BSCS',   name: 'B.S. Computer Science',                  level: 'bachelors', college: 'IT',       totalCUs: 124 },
+  BSIT:   { id: 'BSIT',   name: 'B.S. Information Technology',            level: 'bachelors', college: 'IT',       totalCUs: 120 },
+  BSCIA:  { id: 'BSCIA',  name: 'B.S. Cybersecurity and Information Assurance', level: 'bachelors', college: 'IT', totalCUs: 120 },
+  BSSD:   { id: 'BSSD',   name: 'B.S. Software Development',              level: 'bachelors', college: 'IT',       totalCUs: 120 },
+  BSDA:   { id: 'BSDA',   name: 'B.S. Data Analytics',                    level: 'bachelors', college: 'IT',       totalCUs: 120 },
+  BSUXD:  { id: 'BSUXD',  name: 'B.S. UX Design',                        level: 'bachelors', college: 'IT',       totalCUs: 120 },
+  BSNET:  { id: 'BSNET',  name: 'B.S. Network Operations and Security',   level: 'bachelors', college: 'IT',       totalCUs: 120 },
+  BSCLOUD:{ id: 'BSCLOUD',name: 'B.S. Cloud Computing',                   level: 'bachelors', college: 'IT',       totalCUs: 120 },
+
+  // ── Business Bachelor's ────────────────────────
+  BSBA:   { id: 'BSBA',   name: 'B.S. Business Administration',           level: 'bachelors', college: 'Business', totalCUs: 120 },
+  BSBAMG: { id: 'BSBAMG', name: 'B.S. Business Administration – Management', level: 'bachelors', college: 'Business', totalCUs: 120 },
+  BSBAAC: { id: 'BSBAAC', name: 'B.S. Business Administration – Accounting', level: 'bachelors', college: 'Business', totalCUs: 120 },
+  BSBAHC: { id: 'BSBAHC', name: 'B.S. Business Administration – Healthcare Management', level: 'bachelors', college: 'Business', totalCUs: 120 },
+  BSBAMK: { id: 'BSBAMK', name: 'B.S. Business Administration – Marketing', level: 'bachelors', college: 'Business', totalCUs: 120 },
+  BSHIM:  { id: 'BSHIM',  name: 'B.S. Health Information Management',     level: 'bachelors', college: 'Business', totalCUs: 120 },
+  BSPM:   { id: 'BSPM',   name: 'B.S. Project Management',                level: 'bachelors', college: 'Business', totalCUs: 120 },
+
+  // ── IT Master's ────────────────────────────────
+  MSITM:  { id: 'MSITM',  name: 'M.S. Information Technology Management', level: 'masters',   college: 'IT',       totalCUs: 30 },
+  MSDA:   { id: 'MSDA',   name: 'M.S. Data Analytics',                    level: 'masters',   college: 'IT',       totalCUs: 36 },
+  MSCIA:  { id: 'MSCIA',  name: 'M.S. Cybersecurity and Information Assurance', level: 'masters', college: 'IT',   totalCUs: 30 },
+
+  // ── Business Master's ──────────────────────────
+  MBA:    { id: 'MBA',    name: 'Master of Business Administration',       level: 'masters',   college: 'Business', totalCUs: 30 },
+  MSHRM:  { id: 'MSHRM', name: 'M.S. Human Resource Management',          level: 'masters',   college: 'Business', totalCUs: 30 },
+  MSMBA:  { id: 'MSMBA', name: 'M.S. Management and Leadership',          level: 'masters',   college: 'Business', totalCUs: 30 },
 };
 
 export const COURSES = [

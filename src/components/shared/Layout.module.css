@@ -6,7 +6,7 @@
 
 /* ── Sidebar ── */
 .sidebar {
-  width: auto;
+  width: 240px;
   min-height: 100vh;
   background: var(--deep-navy);
   border-right: 1px solid var(--navy-border);
@@ -17,6 +17,7 @@
   top: 0;
   height: 100vh;
   overflow-y: auto;
+  flex-shrink: 0;
 }
 
 .logo {
@@ -54,7 +55,6 @@
   text-transform: uppercase;
 }
 
-/* Progress card */
 .progressCard {
   background: var(--navy);
   border: 1px solid var(--navy-border);
@@ -73,10 +73,7 @@
   flex-shrink: 0;
 }
 
-.ringsvg {
-  width: 100%;
-  height: 100%;
-}
+.ringsvg { width: 100%; height: 100%; }
 
 .ringBg {
   fill: none;
@@ -109,7 +106,6 @@
 .progressCUs { font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--owl-white); }
 .progressProgram { font-size: 0.72rem; color: var(--amber); margin-top: 2px; }
 
-/* Nav */
 .nav {
   display: flex;
   flex-direction: column;
@@ -147,7 +143,6 @@
   text-align: center;
 }
 
-/* Pro banner */
 .proBanner {
   background: linear-gradient(135deg, rgba(245,166,35,0.08), rgba(245,166,35,0.03));
   border: 1px solid rgba(245,166,35,0.2);
@@ -179,7 +174,6 @@
   padding: 9px 16px;
 }
 
-/* Main */
 .main {
   flex: 1;
   padding: 32px;
@@ -187,8 +181,71 @@
   min-width: 0;
 }
 
+/* ── Mobile ── */
 @media (max-width: 768px) {
-  .shell { flex-direction: column; }
-  .sidebar { width: 100%; height: auto; position: static; }
-  .main { padding: 20px 16px; }
+  .shell {
+    flex-direction: column;
+    padding-bottom: 70px; /* space for bottom nav */
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: unset;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    top: unset;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+    border-right: none;
+    border-top: 1px solid var(--navy-border);
+    overflow: visible;
+  }
+
+  /* Hide these on mobile — only show nav */
+  .logo,
+  .progressCard,
+  .proBanner {
+    display: none;
+  }
+
+  .nav {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    gap: 0;
+    flex: unset;
+  }
+
+  .navItem {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 10px 0;
+    flex: 1;
+    border-radius: 0;
+    font-size: 0.7rem;
+    border: none !important;
+  }
+
+  .navIcon {
+    font-size: 1.3rem;
+    width: auto;
+  }
+
+  .navActive {
+    background: transparent;
+    color: var(--amber) !important;
+    border: none !important;
+  }
+
+  .main {
+    padding: 16px;
+  }
 }
