@@ -16,13 +16,13 @@ export default function Layout() {
       {/* Sidebar */}
       <aside className={styles.sidebar}>
         {/* Logo */}
-        <div className={styles.logo}>
-          <span className={styles.logoOwl}>🦉</span>
-          <div>
-            <div className={styles.logoName}>NightOwl<span>Atlas</span></div>
-            <div className={styles.logoSub}>WGU Companion</div>
-          </div>
-        </div>
+        <NavLink to="/" className={styles.logo} style={{ textDecoration: 'none' }}>
+  <span className={styles.logoOwl}>🦉</span>
+  <div>
+    <div className={styles.logoName}>NightOwl<span>Atlas</span></div>
+    <div className={styles.logoSub}>WGU Companion</div>
+  </div>
+</NavLink>
 
         {/* Progress ring summary */}
         <div className={styles.progressCard}>
@@ -62,6 +62,9 @@ export default function Layout() {
             </NavLink>
           ))}
         </nav>
+           <a href="/privacy" style={{ fontSize: '0.75rem', color: 'var(--muted)', textAlign: 'center', marginTop: '8px' }}>
+  Privacy Policy
+</a>
 
         {/* Bottom - Pro badge */}
         <div className={styles.proBanner}>

@@ -51,14 +51,14 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: var(--amber);
+  background: var(--navy-light);
   cursor: pointer;
   box-shadow: 0 0 0 4px rgba(245,166,35,0.2);
   transition: box-shadow var(--transition);
 }
 
 .slider::-webkit-slider-thumb:hover {
-  box-shadow: 0 0 0 8px rgba(245,166,35,0.2);
+  box-shadow: 0 0 0 8px rgba(230, 212, 184, 0.2);
 }
 
 .sliderLabels {

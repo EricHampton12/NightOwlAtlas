@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AppProvider, useApp } from './context/AppContext';
 import Layout from './components/shared/Layout';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import Dashboard from './pages/Dashboard';
 import CourseMap from './pages/CourseMap';
 import CourseDetail from './pages/CourseDetail';
@@ -29,6 +30,7 @@ export default function App() {
             <Route path="courses" element={<CourseMap />} />
             <Route path="courses/:courseId" element={<CourseDetail />} />
             <Route path="projector" element={<GradProjector />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
           </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

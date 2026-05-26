@@ -1,5 +1,6 @@
 import { createContext, useContext, useReducer, useEffect } from 'react';
-import { getCoursesByProgram, WGU_TERM } from '../utils/wguData';
+import { getCoursesByProgram, DEGREE_PROGRAMS, WGU_TERM } from '../utils/wguData';
+
 
 const AppContext = createContext(null);
 
@@ -89,7 +90,8 @@ export function AppProvider({ children }) {
     (c) => state.progress[c.id]?.status === 'in_progress'
   );
   const completedCUs = completedCourses.reduce((sum, c) => sum + c.creditUnits, 0);
-  const totalCUs = state.courses.reduce((sum, c) => sum + c.creditUnits, 0);
+  const totalCUs = DEGREE_PROGRAMS[state.user.program]?.totalCUs ?? 
+  state.courses.reduce((sum, c) => sum + c.creditUnits, 0);
   const remainingCUs = totalCUs - completedCUs;
 
   const monthsToGrad =
