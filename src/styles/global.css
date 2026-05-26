@@ -7,6 +7,12 @@
   --navy: #151d35;
   --navy-light: #1e2a47;
   --navy-border: #253050;
+   --surface: var(--deep-navy);
+  --border: var(--navy-border);
+  --text: var(--owl-white);
+  --text-muted: var(--muted);
+  --primary: var(--amber);
+  --primary-subtle: var(--amber-glow);
 
   --amber: #f5a623;
   --amber-light: #ffc24a;
