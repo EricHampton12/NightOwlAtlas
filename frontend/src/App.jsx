@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AppProvider, useApp } from './context/AppContext';
-import { supabase } from './lib/supabaseClient';
-import Layout from './components/shared/Layout';
-import Dashboard from './pages/Dashboard';
-import CourseMap from './pages/CourseMap';
-import CourseDetail from './pages/CourseDetail';
-import GradProjector from './pages/GradProjector';
-import Onboarding from './pages/Onboarding';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import PrivacyPolicy from './pages/PrivacyPolicy';
+import { supabase } from './lib/supabaseClient.js';
+import Layout from './components/shared/Layout.jsx';
+import Dashboard from './pages/Dashboard.jsx';
+import CourseMap from './pages/CourseMap.jsx';
+import CourseDetail from './pages/CourseDetail.jsx';
+import GradProjector from './pages/GradProjector.jsx';
+import Onboarding from './pages/Onboarding.jsx';
+import Login from './pages/Login.jsx';
+import Signup from './pages/Signup.jsx';
+import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
 import './styles/global.css';
 
 function ProtectedRoute({ children }) {
