@@ -1,6 +1,7 @@
 import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
 import styles from './Layout.module.css';
+import { supabase } from '../../lib/supabaseClient';
 
 const NAV = [
   { to: '/',          label: 'Dashboard',   icon: '◉' },
@@ -10,6 +11,14 @@ const NAV = [
 
 export default function Layout() {
   const { progressPct, state, completedCUs, totalCUs } = useApp();
+  const navigate = useNavigate();
+
+const handleLogout = async () => {
+  await supabase.auth.signOut();
+  localStorage.clear();
+  sessionStorage.clear();
+  navigate('/login', { replace: true });
+};
 
   return (
     <div className={styles.shell}>
@@ -22,7 +31,15 @@ export default function Layout() {
     <div className={styles.logoName}>NightOwl<span>Atlas</span></div>
     <div className={styles.logoSub}>WGU Companion</div>
   </div>
+
 </NavLink>
+   <button
+  type="button"
+  className={`btn ${styles.logoutBtn}`}
+  onClick={handleLogout}
+>
+  Logout
+</button>
 
         {/* Progress ring summary */}
         <div className={styles.progressCard}>
@@ -45,6 +62,7 @@ export default function Layout() {
             <div className={styles.progressProgram}>{state.user.program}</div>
           </div>
         </div>
+  
 
         {/* Nav */}
         <nav className={styles.nav}>
@@ -65,6 +83,7 @@ export default function Layout() {
            <a href="/privacy" style={{ fontSize: '0.75rem', color: 'var(--muted)', textAlign: 'center', marginTop: '8px' }}>
   Privacy Policy
 </a>
+
 
         {/* Bottom - Pro badge */}
         <div className={styles.proBanner}>
