@@ -6,4 +6,3 @@ server/.env
 server/.env.*
 .DS_Store
 dist/
-
