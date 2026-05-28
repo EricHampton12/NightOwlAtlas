@@ -9,7 +9,7 @@ import CourseDetail from './pages/CourseDetail';
 import GradProjector from './pages/GradProjector';
 import Onboarding from './pages/Onboarding';
 import Login from './pages/Login';
-import SignUp from './pages/SignUp';
+import Signup from './pages/Signup';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import './styles/global.css';
 
