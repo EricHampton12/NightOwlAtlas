@@ -13,13 +13,6 @@ export default function Layout() {
   const { progressPct, state, completedCUs, totalCUs } = useApp();
   const navigate = useNavigate();
 
-const handleLogout = async () => {
-  await supabase.auth.signOut();
-  localStorage.clear();
-  sessionStorage.clear();
-  navigate('/login', { replace: true });
-};
-
   return (
     <div className={styles.shell}>
       {/* Sidebar */}
@@ -33,13 +26,6 @@ const handleLogout = async () => {
   </div>
 
 </NavLink>
-   <button
-  type="button"
-  className={`btn ${styles.logoutBtn}`}
-  onClick={handleLogout}
->
-  Logout
-</button>
 
         {/* Progress ring summary */}
         <div className={styles.progressCard}>

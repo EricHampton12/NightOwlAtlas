@@ -18,6 +18,13 @@ export default function Dashboard() {
     inProgressCourses,
     dispatch,
   } = useApp();
+  
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    localStorage.clear();
+    sessionStorage.clear();
+    navigate('/login', { replace: true });
+  };
 
   const navigate = useNavigate();
 
@@ -68,12 +75,24 @@ export default function Dashboard() {
             {state.user.program} · {state.user.targetCUsPerMonth} CUs/month pace
           </p>
         </div>
-        <button
-          className={`btn btn-primary`}
-          onClick={() => navigate('/projector')}
-        >
-          ◎ Adjust Pace
-        </button>
+       <div className={styles.btnGroup}>
+  <button
+    className="btn btn-primary"
+    onClick={() => navigate('/projector')}
+    
+  >
+    ◎ Adjust Pace
+  </button>
+
+  <button
+    type="button"
+    className={`btn ${styles.logoutBtn}`}
+    onClick={handleLogout}
+    
+  >
+    Logout
+  </button>
+</div>
       </header>
 
       {/* Stat cards */}

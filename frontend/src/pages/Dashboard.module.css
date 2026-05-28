@@ -175,6 +175,15 @@
   font-style: italic;
   margin-bottom: 10px;
 }
+.btnGroup{
+  display: inline-flex;
+  gap: 10px;
+  width: auto;
+}
+ .logoutBtn {
+   margin-top: 12px;
+   width: auto;
+ }
 
 .redditMeta { font-size: 0.78rem; color: var(--muted); }
 
