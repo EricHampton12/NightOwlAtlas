@@ -1,12 +1,14 @@
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
-const morgan = require('morgan');
-const rateLimit = require('express-rate-limit');
+import dotenv from 'dotenv';
+import express from 'express';
+import cors from 'cors';
+import morgan from 'morgan';
+import rateLimit from 'express-rate-limit';
 
-const coursesRoutes = require('./routes/courses');
-const aiRoutes = require('./routes/ai');
-const authRoutes = require('./routes/auth');
+import coursesRoutes from './routes/courses.js';
+import aiRoutes from './routes/ai.js';
+import authRoutes from './routes/auth.js';
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;

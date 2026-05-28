@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 import pg from "pg";
-import { COURSES, DEGREE_PROGRAMS } from "../../src/utils/wguData.js";
+import { COURSES, DEGREE_PROGRAMS } from "../../../frontend/src/utils/wguData.js";
 
 dotenv.config();
 
